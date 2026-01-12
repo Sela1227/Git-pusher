@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "name": "集資",
+      "path": "C:\\Users\\cbrto\\Documents\\Python\\線上集資系統"
+    },
+    {
+      "name": "選股",
+      "path": "C:\\Users\\cbrto\\Documents\\Python\\選股系統"
+    },
+    {
+      "name": "Git",
+      "path": "C:\\Users\\cbrto\\Documents\\Python\\Git 推送工具"
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "current_index": 2
+}
