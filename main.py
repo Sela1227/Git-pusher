@@ -573,6 +573,69 @@ def main(page: ft.Page):
             set_status(False, f"git init 失敗：{output}")
             return
 
+        # 產生 .gitignore
+        gitignore_path = os.path.join(cwd, ".gitignore")
+        if not os.path.exists(gitignore_path):
+            gitignore_content = """# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if applicable)
+node_modules/
+
+# Flet
+.flet/
+"""
+            try:
+                with open(gitignore_path, "w", encoding="utf-8") as f:
+                    f.write(gitignore_content)
+            except Exception as ex:
+                set_status(False, f"建立 .gitignore 失敗：{ex}")
+                return
+
         # git add .
         success, output = run_git_command("git add .", cwd)
         if not success:
